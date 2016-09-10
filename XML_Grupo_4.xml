@@ -1,0 +1,86 @@
+
+<TP-ACyEDA>
+	<app name="Audio To Video" command="c:/comandos/ffmpeg.exe">
+		<config name="WAV+JPG=MKV">
+		<invoke>ffmpeg -i [AUDIO] -max [DURMAX] -loop 1 -i [IMAGE] -vcodec libx264 -preset slow -crf 20 -threads 0 -acodec copy -shortest [VIDEO]</invoke>
+
+		<!-- NOMBRE DE ARCHIVO -->
+        <param name="AUDIO" class="tp.control.FileChooser" label="Archivo de audio">
+				<control-type name="FILE-CHOOSER">
+					<def-dir>/usr/pablo/mis canciones</def-dir>
+					<tipo-arch>mp3,wav,wma</tipo-arch>
+				</control-type>
+		</param>
+
+        <!-- TIEMPO -->
+		<param name="DURMAX" class="tp.control.Time" label="Duracion Maxima del Video">
+			<control-type name="TEXTFIELD">
+				<regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+			</control-type>
+		</param>
+
+        <!-- NUMERO -->
+		<param name="NUMERO" class="tp.control.Numero" label="Numero">
+			<control-type name="TEXTFIELD">
+				<lenght>100</lenght>
+				<regex>[0-9]{1,100}</regex>
+			</control-type>
+		</param>
+
+        <!-- INTERVALO DE TIEMPO -->
+        <param name="DURACION" class="tp.control.IntervalTime" label="Intervalo de tiempo">
+	        <control-type name="TEXTFIELD">
+	          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	        <control-type>
+	        <control-type name="TEXTFIELD">
+	          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	        <control-type>
+	        <control-type name="RADIOBUTTON">
+	        	<option>Inicio y Fin</option>
+	        	<option>Inicio y Duracion</option>
+	        <control-type>	
+        </param>
+
+
+        <!-- INTERVALO DE FECHA -->
+        <param name="DURACION_FECHA" class="tp.control.IntervalDate" label="Intervalo de fechas">
+	        <control-type name="TEXTFIELD">
+	          <regex>[0-9]{2}/[0-9]{2}/[0-9]{4}</regex>
+	        <control-type>
+	        <control-type name="TEXTFIELD">
+	          <lenght>100</lenght>
+	          <regex>[0-9]{1,100}</regex>
+	        <control-type>	
+        </param>
+
+        <!-- INTERVALO DE FECHA -->
+        <param name="FECHA_INICIO" class="tp.control.Fecha" label="Fecha Inicio">
+	        <control-type name="CALENDAR">
+	          <regex>[0-9]{2}/[0-9]{2}/[0-9]{4}</regex>
+	        <control-type>
+        </param>
+
+        <!-- TEXTO ACOTADO -->
+        <param name="FORMATO_SALIDA" class="tp.control.Formato" label="Formato">
+	        <control-type name="COMBO">
+	      <!-- <valoresPosibles>avi,mp4,mkv,mpg</valoresPosibles> -->
+	          <option>avi</option>
+	          <option>mp4</option>
+	          <option>mkv</option>
+	          <option>mpg</option>
+	        <control-type>
+        </param>
+
+		</config>
+	</app>
+</TP-ACyEDA>
+
+Tipos de datos posible:
+1.  Texto plano
+2.  Texto acotado (Combo)
+3.  Numero
+4.  Tiempo
+5.  Intervalo de tiempos
+6.  Fecha
+7.  Intervalo de fechas
+8.  File
