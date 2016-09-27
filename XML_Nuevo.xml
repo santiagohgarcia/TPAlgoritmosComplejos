@@ -1,0 +1,26 @@
+
+<TP-ACyEDA>
+	<app title="ROTAR VIDEO">
+		<config command="c:/.../ffmpeg.exe"
+			    params="-i [VIDEO] -vf rotate=[GRADO]...">
+	        <control name="VIDEO" 
+	        	     class="tp.control.FileChooser" 
+	        	     label="Archivo de video">
+	            <def-dir>/users/antonella/Mis videos</def-dir>
+	            <tipo-arch>mp4,avi,mpeg</tipo-arch>
+	        </control>
+	        <control name="GRADO" 
+	        	     class="tp.control.ComboBox" 
+	        	     label="Grado">
+	            <def-value>90</def-value>
+	            <regex>0*|360</regex>
+	        </control>
+	        <control name="OUTVIDEO" 	
+	        	     class="tp.control.FileChooser" 
+	        	     label="Guardar En">
+	            <def-dir>/users/antonella/Mis videos convertidos</def-dir>
+	            <tipo-arch>mp4,avi,mpeg</tipo-arch>
+	        </control>
+    	</config>
+	</app>
+</TP-ACyEDA>
