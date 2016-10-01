@@ -1,0 +1,47 @@
+
+<TP-ACyEDA>
+	<app title="ROTAR VIDEO">
+	    <config title="config rotar video"
+				    command="c:/.../ffmpeg.exe"
+				    params="-i [VIDEO] -vf rotate=[GRADO]...">
+		     <control name="VIDEO" 
+		        	  controlClass="tp.control.FileChooser" 
+		        	  label="Archivo de video">
+		     </control>
+		     <control name="GRADO" 
+		        	     controlClass="tp.control.ComboBox" 
+		        	     label="Grado">
+		     </control>
+		     <control name="OUTVIDEO" 	
+		        	     controlClass="tp.control.FileChooser" 
+		        	     label="Guardar En">
+		     </control>
+		</config>
+	</app>
+		<app title="CORTAR VIDEO">
+	    <config title="config cortar video1"
+				    command="c:/.../ffmpeg.exe"
+				    params="-i [VIDEO] -vf rotate=[GRADO]...">
+		     <control name="VIDEO" 
+		        	  controlClass="tp.control.FileChooser" 
+		        	  label="Archivo de video">
+		     </control>
+		     <control name="GRADO" 
+		        	     controlClass="tp.control.ComboBox" 
+		        	     label="Grado">
+		     </control>
+		     <control name="OUTVIDEO" 	
+		        	     controlClass="tp.control.FileChooser" 
+		        	     label="Guardar En">
+		     </control>
+		</config>
+		  <config title="config cortar video2"
+				    command="c:/.../ffmpeg.exe"
+				    params="-i [VIDEO] -vf rotate=[GRADO]...">
+		     <control name="VIDEO" 
+		        	  controlClass="tp.control.FileChooser" 
+		        	  label="Archivo de video">
+		     </control>
+		</config>
+	</app>
+</TP-ACyEDA>
