@@ -1,0 +1,92 @@
+<TP-ACyEDA>
+	<app title="MMPEG">
+	  
+
+         <config title="Rotar Video"
+				command="c:/.../ffmpeg.exe"
+				params="-i [VIDEO] -vf rotate=[GRADO] -o [VIDEO_OUT]...">
+		     
+		    <controlFileChooser name="VIDEO" 
+		        	            label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		    </controlFileChooser>
+	        
+	        <controlComboBox name="GRADO" 
+	        	             label="Grado">
+		            <option>90</option>
+		            <option>180</option>
+		            <option>360</option>
+	        </controlComboBox>
+
+   			<controlFileChooser name="VIDEO_OUT" 
+		        	            label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		     </controlFileChooser>
+
+        </config>
+
+
+
+        <config title="Video Extract"
+				command="c:/.../ffmpeg.exe"
+				params="-i [VIDEO] -d [TIME_LOW] -e [TIME_HIGH] -o [VIDEO_OUT]...">
+
+				<controlFileChooser name="VIDEO" 
+		        	                label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		        </controlFileChooser>
+
+                <controlTimeInterval name="TIME INTERVAL" 
+	        	                     label="Intervalo de Tiempo">
+			     		<timeLow name="TIME_LOW" 
+		        	             label="Tiempo LOW">
+           			          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+                        </timeLow>
+	         
+	                    <timeHigh name="TIME_HIGH" 
+	        	                  label="Tiempo HIGH">
+						      <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+				        </timeHigh>             
+	            </controlTimeInterval> 
+
+                <controlFileChooser name="VIDEO_OUT" 
+		        	                label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		        </controlFileChooser>
+		</config>
+
+
+        
+        <config title="Audio To Video"
+				command="c:/.../ffmpeg.exe"
+				params="-i [IMAGE] -a [AUDIO] -o [VIDEO_OUT]...">
+
+                <controlFileChooser name="AUDIO" 
+		        	                label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		        </controlFileChooser>			
+
+                <controlFileChooser name="IMAGE" 
+		        	                label="Archivo de imagen">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>jpg,gif</tipo-arch>
+		        </controlFileChooser>		
+
+                <controlFileChooser name="VIDEO_OUT" 
+		        	                label="Archivo de video">
+	        	    <def-dir>c</def-dir>
+                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		        </controlFileChooser>	
+
+	    </config>
+
+
+
+
+</app>
+</TP-ACyEDA>

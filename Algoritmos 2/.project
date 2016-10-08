@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>lib</name>
+			<type>2</type>
+			<location>C:/Users/Santiago/Programming/TPAlgoritmos/TPAlgoritmosComplejos/Algoritmos 2/xstream-1.4.9/lib</location>
+		</link>
+	</linkedResources>
 </projectDescription>

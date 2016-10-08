@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 
 public class VentanaPrincipal extends JFrame {
@@ -56,7 +57,9 @@ public class VentanaPrincipal extends JFrame {
 		JPanel panelPrincipal = new JPanel();
 		
 		JScrollPane scrollPane = new JScrollPane(panelPrincipal);
+	
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
+		
 	}
 	
 	public void setAplicaciones(List<Aplicacion> aplicaciones){

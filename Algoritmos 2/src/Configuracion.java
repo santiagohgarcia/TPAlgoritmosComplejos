@@ -7,6 +7,14 @@ public class Configuracion {
 	private String params;
 	private List<Control> controles = new ArrayList<Control>();
 	
+	public List<Control> getControles() {
+		return controles;
+	}
+
+	public void setControles(List<Control> controles) {
+		this.controles = controles;
+	}
+
 	//para testear combo
 	public Configuracion(String nombre) {
 		setNombre(nombre);

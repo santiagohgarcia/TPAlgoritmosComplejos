@@ -4,6 +4,27 @@
 		<config title="config 1"
 			    command="c:/.../ffmpeg.exe"
 			    params="-i [VIDEO] -vf rotate=[GRADO]...">
+	        <controlFileChooser name="VIDEO" 
+	        	                label="Archivo de video">
+	            <def-dir>/users/antonella/Mis videos</def-dir>
+	            <tipo-arch>mp4,avi,mpeg</tipo-arch>
+	        </controlFileChooser>
+	        <controlComboBox name="GRADO" 
+	        	     label="Grado">
+	            <def-value>90</def-value>
+	            <regex>0*|360</regex>
+	        </controlComboBox>
+	        <controlFileChooser name="OUTVIDEO" 	
+	        	                label="Guardar En">
+	            <def-dir>/users/antonella/Mis videos convertidos</def-dir>
+	            <tipo-arch>mp4,avi,mpeg</tipo-arch>
+	        </controlFileChooser>
+    	</config>
+	</app>
+    <app title="ROTAR VIDEO 2">
+		<config title="config 1"
+			    command="c:/.../ffmpeg.exe"
+			    params="-i [VIDEO] -vf rotate=[GRADO]...">
 	        <control name="VIDEO" 
 	        	     controlClass="tp.control.FileChooser" 
 	        	     label="Archivo de video">
@@ -28,21 +49,4 @@
 
 
 
-<app title="ROTAR VIDEO">
-		<config title="config 1"
-			    command="c:/.../ffmpeg.exe"
-			    params="-i [VIDEO] -vf rotate=[GRADO]...">
-	        <control name="VIDEO" 
-	        	     controlClass="tp.control.FileChooser" 
-	        	     label="Archivo de video">
-	        </control>
-	        <control name="GRADO" 
-	        	     controlClass="tp.control.ComboBox" 
-	        	     label="Grado">
-	        </control>
-	        <control name="OUTVIDEO" 	
-	        	     controlClass="tp.control.FileChooser" 
-	        	     label="Guardar En">
-	        </control>
-    	</config>
-	</app>
+

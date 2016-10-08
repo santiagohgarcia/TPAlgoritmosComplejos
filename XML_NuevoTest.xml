@@ -1,47 +1,95 @@
-
 <TP-ACyEDA>
 	<app title="ROTAR VIDEO">
 	    <config title="config rotar video"
 				    command="c:/.../ffmpeg.exe"
 				    params="-i [VIDEO] -vf rotate=[GRADO]...">
-		     <control name="VIDEO" 
-		        	  controlClass="tp.control.FileChooser" 
-		        	  label="Archivo de video">
-		     </control>
-		     <control name="GRADO" 
-		        	     controlClass="tp.control.ComboBox" 
-		        	     label="Grado">
-		     </control>
-		     <control name="OUTVIDEO" 	
-		        	     controlClass="tp.control.FileChooser" 
-		        	     label="Guardar En">
-		     </control>
+		     
+		     <controlFileChooser name="VIDEO" 
+		        	             label="Archivo de video">
+		        	    <def-dir>/users/antonella/Mis videos</def-dir>
+	                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+		     </controlFileChooser>
+	        
+
+	         <controlComboBox name="GRADO" 
+	        	     label="Grado">
+		            <option>90</option>
+		            <option>180</option>
+		            <option>360</option>
+	         </controlComboBox>
+
+
+	         <controlTime name="TIEMPO" 
+	        	            label="Tiempo">
+		          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	         </controlTime>
+             
+             <controlNumber name="NUMERO" 
+	        	            label="Numero">
+		          <regex>[0-9]{1,100}</regex>
+	         </controlNumber>            
+
+
+          <controlTimeInterval name="TIME INTERVAL" 
+	        	                     label="Intervalo de Tiempo">
+										     		<timeLow name="TIEMPO_LOW" 
+									        	            label="Tiempo LOW">
+										          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	                </timeLow>
+	         
+	                <timeHigh name="TIEMPO_HIGH" 
+	        	            label="Tiempo HIGH">
+									          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+								         </timeHigh> 
+			                         
+	        </controlTimeInterval> 
+
+
+	         <controlTimePlusTime name="TIMEPLUSTIME" 
+       	                       label="Tiempo Mas Tiempo(Intervalo)">
+									     		<timeLow name="TIEMPO_LOW" 
+								        	        label="Tiempo Low">
+									          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+								        </timeLow>
+					           <timeToSum name="TIEMPO_A_SUMAR" 
+					       	              label="Tiempo a Sumar">
+							          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+						         </timeToSum>                 
+        </controlTimePlusTime>  
+
+
+        <controlDate name="DATE" 
+					       	        label="Fecha">
+					       	  <regex>[0-9]{2}/[0-9]{2}/[0-9]{4}</regex>
+        </controlDate>
+
+
+        <controlDateInterval name="DATE INTERVAL" 
+	        	                   label="Intervalo de Fechas">
+										     		<dateLow name="DATE_LOW" 
+									        	            label="Fecha Low">
+										          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	                </dateLow>
+	         
+	                <dateHigh name="FECHA_HIGH" 
+	        	                 label="Fecha High">
+									          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+								         </dateHigh> 
+			                         
+	        </controlDateInterval> 
+
+        <controlDatePlusDays name="DATE INTERVAL" 
+	        	                   label="Intervalo de Fechas">
+										     		<dateLow name="DATE_LOW" 
+									        	            label="Fecha Low">
+										          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+	                </dateLow>
+	            <days name="NUMERO" 
+	        	            label="Numero">
+		                <regex>[0-9]{1,100}</regex>
+	            </days>   
+			     </controlDatePlusDays> 
+
 		</config>
-	</app>
-		<app title="CORTAR VIDEO">
-	    <config title="config cortar video1"
-				    command="c:/.../ffmpeg.exe"
-				    params="-i [VIDEO] -vf rotate=[GRADO]...">
-		     <control name="VIDEO" 
-		        	  controlClass="tp.control.FileChooser" 
-		        	  label="Archivo de video">
-		     </control>
-		     <control name="GRADO" 
-		        	     controlClass="tp.control.ComboBox" 
-		        	     label="Grado">
-		     </control>
-		     <control name="OUTVIDEO" 	
-		        	     controlClass="tp.control.FileChooser" 
-		        	     label="Guardar En">
-		     </control>
-		</config>
-		  <config title="config cortar video2"
-				    command="c:/.../ffmpeg.exe"
-				    params="-i [VIDEO] -vf rotate=[GRADO]...">
-		     <control name="VIDEO" 
-		        	  controlClass="tp.control.FileChooser" 
-		        	  label="Archivo de video">
-		     </control>
-		</config>
-	</app>
+</app>
 </TP-ACyEDA>

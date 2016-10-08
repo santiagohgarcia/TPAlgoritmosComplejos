@@ -1,7 +1,6 @@
 
 public class Control {
      private String name;
-     private String controlClass;
      private String label;
      
      
@@ -9,13 +8,7 @@ public class Control {
 		return name;
 	}
 	public void setName(String name) {
-		name = name;
-	}
-	public String getControlClass() {
-		return controlClass;
-	}
-	public void setControlClass(String controlClass) {
-		this.controlClass = controlClass;
+		this.name = name;
 	}
 	public String getLabel() {
 		return label;
