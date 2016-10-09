@@ -93,7 +93,7 @@ public class Main {
     	xstream.alias("dateLow", ControlDate.class);
     	xstream.alias("days", ControlNumber.class);
     	
-        String filePath = "C:/Users/Santiago/Programming/TPAlgoritmos/TPAlgoritmosComplejos/XML_Final.xml";
+        String filePath = "./../XML_Final.xml";
     	String xml = new String(Files.readAllBytes(Paths.get(filePath)));
 
     	TP_ACyEDA tp = (TP_ACyEDA)xstream.fromXML(xml);
