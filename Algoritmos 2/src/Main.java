@@ -98,7 +98,7 @@ public class Main {
 
     	TP_ACyEDA tp = (TP_ACyEDA)xstream.fromXML(xml);
     	
-    	new Controlador(new VentanaPrincipal(),tp);
+    	new CPrincipal(new VPrincipal(),tp);
 
 	}
 	
