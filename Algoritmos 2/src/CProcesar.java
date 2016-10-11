@@ -15,7 +15,7 @@ public class CProcesar extends CDialog{
 		iniciarDerivable(padre,vista);
 		accionBotones();
 		vista.setVisible(true);
-		new Thread(() -> ejecutarComando(comando)).run();
+		new Thread(() -> ejecutarComando(comando)).start();
 	}
 
 	private void ejecutarComando(String comando) {
@@ -29,7 +29,11 @@ public class CProcesar extends CDialog{
 			}
 			while ((line = in.readLine()) != null) {  
 			    vista.addNewLine(line);  
-			}  
+			}
+			proceso.exitValue();
+			vista.habilitarCerrar();
+			vista.deshabilitarCancelar();
+			UPaneles.mostrarInformacion(vista, "Comando finalizado con exito");
 		}catch (Exception e) {
 			UPaneles.mostrarError(vista, "Ocurrio un error inesperado");
 		}
