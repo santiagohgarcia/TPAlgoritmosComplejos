@@ -26,4 +26,7 @@ public class ControlFileChooser extends Control{
 	public void setTipoArch(String tipoArch) {
 		this.tipoArch = tipoArch;
 	}
+	@Override
+	public void limpiar() {
+	}
 }

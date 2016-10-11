@@ -16,6 +16,9 @@ public class ControlTimeInterval extends Control{
 	public void setTimeHigh(ControlTime timeHigh) {
 		this.timeHigh = timeHigh;
 	}
+	@Override
+	public void limpiar() {
+	}
 	
 	
 	

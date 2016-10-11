@@ -15,5 +15,8 @@ public class ControlDatePlusDays extends Control{
 	public void setDateLow(ControlDate dateLow) {
 		this.dateLow = dateLow;
 	}
+	@Override
+	public void limpiar() {
+	}
 	
 }

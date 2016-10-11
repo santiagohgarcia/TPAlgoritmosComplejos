@@ -17,5 +17,8 @@ public class ControlTimePlusTime extends Control{
 	public void setTimeToSum(ControlTime timeToSum) {
 		this.timeToSum = timeToSum;
 	}
+	@Override
+	public void limpiar() {
+	}
 	
 }

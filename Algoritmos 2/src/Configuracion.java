@@ -7,6 +7,10 @@ public class Configuracion {
 	private String params;
 	private List<Control> controles = new ArrayList<Control>();
 	
+	public void armar(){
+		controles.forEach(c -> c.armar());
+	}
+	
 	public List<Control> getControles() {
 		return controles;
 	}

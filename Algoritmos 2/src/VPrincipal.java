@@ -21,6 +21,7 @@ public class VPrincipal extends JFrame {
 	private JButton btnProcesar;
 	private JComboBox<Configuracion> cbConfig;
 	private JComboBox<Aplicacion> cbAplicacion;
+	private JPanel panelPrincipal;
 	public VPrincipal() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400,400);
@@ -56,12 +57,17 @@ public class VPrincipal extends JFrame {
 		cbConfig = new JComboBox<Configuracion>();
 		panelConfig.add(cbConfig);
 		
-		JPanel panelPrincipal = new JPanel();
+		panelPrincipal = new JPanel();
 		
 		JScrollPane scrollPane = new JScrollPane(panelPrincipal);
 	
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
+	}
+	
+	public void addControls(List<Control> controles){
+		panelPrincipal.removeAll();
+		controles.forEach(c -> panelPrincipal.add(c.getPanel()));
 	}
 	
 	public void setAplicaciones(List<Aplicacion> aplicaciones){

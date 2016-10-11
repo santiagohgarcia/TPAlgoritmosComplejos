@@ -19,6 +19,10 @@ public class ControlTime extends Control{
 	public void setRegex(String regex) {
 		this.regex = regex;
 	}
+
+	@Override
+	public void limpiar() {
+	}
 	
 	
 	

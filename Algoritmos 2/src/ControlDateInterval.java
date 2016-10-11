@@ -14,5 +14,8 @@ public class ControlDateInterval extends Control {
 	public void setDateHigh(ControlDate dateHigh) {
 		this.dateHigh = dateHigh;
 	}
+	@Override
+	public void limpiar() {
+	}
 	
 }
