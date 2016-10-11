@@ -32,5 +32,10 @@ public abstract class Control{
 	public JPanel getPanel(){
 		return panel;
 	}
+	
+	public boolean validar()
+	{
+		return true;
+	}
      
 }

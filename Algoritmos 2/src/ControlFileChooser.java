@@ -50,7 +50,6 @@ public class ControlFileChooser extends Control{
 		                }
 
 		                txtRuta.setText(selFile.getAbsolutePath());
-
 		            }
 		    }
 		});
@@ -81,4 +80,5 @@ public class ControlFileChooser extends Control{
 	public void limpiar() {
 		
 	}
+
 }

@@ -30,6 +30,13 @@ public class ControlTimeInterval extends Control{
 	}
 	
 	
+	public boolean validar()
+	{
+		if ( timeLow.validar() && timeHigh.validar() )
+			return true;
+		else
+	        return false;
+	}
 	
 	
 }

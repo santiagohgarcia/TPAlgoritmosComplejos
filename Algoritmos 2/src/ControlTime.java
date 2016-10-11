@@ -1,4 +1,6 @@
 import java.sql.Time;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
 
@@ -34,6 +36,12 @@ public class ControlTime extends Control{
 	public void limpiar() {
 	}
 	
+	public boolean validar()
+	{
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(txtTime.getText());
+		return matcher.matches();
+	}
 	
 	
 }

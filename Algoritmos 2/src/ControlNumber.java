@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 import javax.swing.JSpinner;
 
 public class ControlNumber extends Control {
@@ -30,5 +32,6 @@ public class ControlNumber extends Control {
 	public void limpiar() {
 	}
 	
+
 	
 }

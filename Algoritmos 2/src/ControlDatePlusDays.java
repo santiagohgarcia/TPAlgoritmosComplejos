@@ -28,4 +28,11 @@ public class ControlDatePlusDays extends Control{
 	public void limpiar() {
 	}
 	
+	public boolean validar()
+	{
+		if ( dateLow.validar() && days.validar() )
+			return true;
+		else
+	        return false;
+	}
 }

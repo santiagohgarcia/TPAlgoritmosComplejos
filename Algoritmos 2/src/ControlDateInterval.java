@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ControlDateInterval extends Control {
 	private ControlDate dateLow;
 	private ControlDate dateHigh;
@@ -25,6 +28,14 @@ public class ControlDateInterval extends Control {
 	}
 	@Override
 	public void limpiar() {
+	}
+	
+	public boolean validar()
+	{
+		if ( dateLow.validar() && dateHigh.validar() )
+			return true;
+		else
+	        return false;
 	}
 	
 }

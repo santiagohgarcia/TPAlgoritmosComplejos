@@ -67,19 +67,19 @@
 
                 <controlFileChooser name="AUDIO" 
 		        	                label="Archivo de video">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>			
 
                 <controlFileChooser name="IMAGE" 
 		        	                label="Archivo de imagen">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>jpg,gif</tipo-arch>
 		        </controlFileChooser>		
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>	
 

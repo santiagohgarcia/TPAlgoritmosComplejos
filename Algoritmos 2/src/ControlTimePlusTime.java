@@ -28,4 +28,12 @@ public class ControlTimePlusTime extends Control{
 	public void limpiar() {
 	}
 	
+	public boolean validar()
+	{
+		if ( timeLow.validar() && timeToSum.validar() )
+			return true;
+		else
+	        return false;
+	}
+	
 }
