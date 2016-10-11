@@ -1,9 +1,10 @@
+import javax.swing.JPanel;
 
-public class Control {
+public class Control{
      private String name;
      private String label;
-     
-     
+     private JPanel panel = new JPanel();
+         
 	public String getName() {
 		return name;
 	}
@@ -16,7 +17,9 @@ public class Control {
 	public void setLabel(String label) {
 		this.label = label;
 	}
-     
-     
+    
+	public JPanel getPanel(){
+		return panel;
+	}
      
 }
