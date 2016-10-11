@@ -11,7 +11,6 @@ public class ControlNumber extends Control {
 		super.armar();
 		spinner = new JSpinner();
 		getPanel().add(spinner);
-		
 	}
 	
 	public String getRegex() {

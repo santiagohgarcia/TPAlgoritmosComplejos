@@ -1,7 +1,16 @@
-
 public class ControlDateInterval extends Control {
 	private ControlDate dateLow;
 	private ControlDate dateHigh;
+	
+	@Override
+	public void armar(){
+		super.armar();
+		dateLow.armar();
+		dateHigh.armar();
+		getPanel().add(dateLow.getPanel());
+		getPanel().add(dateHigh.getPanel());
+	}
+	
 	public ControlDate getDateLow() {
 		return dateLow;
 	}

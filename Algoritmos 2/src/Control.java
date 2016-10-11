@@ -7,18 +7,11 @@ public abstract class Control{
      private String name;
      private String label;
      private JPanel panel; 
-     private boolean armado = false;
-     
      
     public void armar(){
-    	if(!armado){
-        	panel = new JPanel();
-        	panel.setLayout(new FlowLayout(0,0,0));
-        	panel.add(new JLabel(label));
-        	armado = true;
-    	}else{
-    		limpiar();
-    	}
+    	panel = new JPanel();
+    	panel.setLayout(new FlowLayout(0,10,0));
+    	panel.add(new JLabel(label));
     }
      
     public abstract void limpiar();

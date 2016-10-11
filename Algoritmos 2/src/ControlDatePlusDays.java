@@ -3,6 +3,15 @@ public class ControlDatePlusDays extends Control{
 	private ControlDate dateLow;
 	private ControlNumber days;
 	
+	@Override
+	public void armar(){
+		super.armar();
+		dateLow.armar();
+		days.armar();
+		getPanel().add(dateLow.getPanel());
+		getPanel().add(days.getPanel());
+	}
+	
 	public ControlNumber getDays() {
 		return days;
 	}

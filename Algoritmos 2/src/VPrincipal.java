@@ -58,7 +58,7 @@ public class VPrincipal extends JFrame {
 		panelConfig.add(cbConfig);
 		
 		panelPrincipal = new JPanel();
-		
+		panelPrincipal.setLayout(new GridLayout(0,1,0,0));
 		JScrollPane scrollPane = new JScrollPane(panelPrincipal);
 	
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
@@ -67,6 +67,7 @@ public class VPrincipal extends JFrame {
 	
 	public void addControls(List<Control> controles){
 		panelPrincipal.removeAll();
+		panelPrincipal.updateUI();
 		controles.forEach(c -> panelPrincipal.add(c.getPanel()));
 	}
 	

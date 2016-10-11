@@ -7,7 +7,7 @@
 				params="-i [VIDEO] -vf rotate=[GRADO] -o [VIDEO_OUT]...">
 		     
 		    <controlFileChooser name="VIDEO" 
-		        	            label="Archivo de video">
+		        	            label="Video input">
 	        	    <def-dir>c</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		    </controlFileChooser>
@@ -20,7 +20,7 @@
 	        </controlComboBox>
 
    			<controlFileChooser name="VIDEO_OUT" 
-		        	            label="Archivo de video">
+		        	            label="Video output">
 	        	    <def-dir>c</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		     </controlFileChooser>

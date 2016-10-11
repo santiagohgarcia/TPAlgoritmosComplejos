@@ -1,9 +1,16 @@
-import java.sql.Time;
-
 public class ControlTimePlusTime extends Control{
 	
 	private ControlTime timeLow;
 	private ControlTime timeToSum;
+	
+	@Override
+	public void armar(){
+		super.armar();
+		timeLow.armar();
+		timeToSum.armar();
+		getPanel().add(timeLow.getPanel());
+		getPanel().add(timeToSum.getPanel());
+	}
 	
 	public ControlTime getTimeLow() {
 		return timeLow;

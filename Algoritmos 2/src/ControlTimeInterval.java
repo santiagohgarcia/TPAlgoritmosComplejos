@@ -4,6 +4,15 @@ public class ControlTimeInterval extends Control{
 	private ControlTime timeLow;
 	private ControlTime timeHigh;
 	
+	@Override
+	public void armar(){
+		super.armar();
+		timeLow.armar();
+		timeHigh.armar();
+		getPanel().add(timeLow.getPanel());
+		getPanel().add(timeHigh.getPanel());
+	}
+	
 	public ControlTime getTimeLow() {
 		return timeLow;
 	}

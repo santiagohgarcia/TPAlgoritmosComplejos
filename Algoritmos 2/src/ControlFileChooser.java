@@ -1,8 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class ControlFileChooser extends Control{
 
+	//TODO FALTA
+	
 	public String getValue() {
 		return value;
 	}
@@ -28,5 +27,6 @@ public class ControlFileChooser extends Control{
 	}
 	@Override
 	public void limpiar() {
+		
 	}
 }
