@@ -8,7 +8,7 @@
 		     
 		    <controlFileChooser name="VIDEO" 
 		        	            label="Video input">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		    </controlFileChooser>
 	        
@@ -21,7 +21,7 @@
 
    			<controlFileChooser name="VIDEO_OUT" 
 		        	            label="Video output">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		     </controlFileChooser>
 
@@ -35,7 +35,7 @@
 
 				<controlFileChooser name="VIDEO" 
 		        	                label="Archivo de video">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 
@@ -54,7 +54,7 @@
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
-	        	    <def-dir>c</def-dir>
+	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 		</config>
