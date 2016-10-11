@@ -58,7 +58,7 @@ public class VPrincipal extends JFrame {
 		panelConfig.add(cbConfig);
 		
 		panelPrincipal = new JPanel();
-		panelPrincipal.setLayout(new GridLayout(0,1,0,0));
+		panelPrincipal.setLayout(new GridLayout(0,1,20,20));
 		JScrollPane scrollPane = new JScrollPane(panelPrincipal);
 	
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
