@@ -109,7 +109,41 @@
 
 	    </config>
 
+        <config title="Print"
+				command="C:\Program Files\ffmpeg"
+				params='echo [FECHA1]---[DATE_LOW]---[DATE_HIGH]---[DATE_LOW2]---[NUMERO]'>
 
+            <controlDate name="FECHA1" 
+					     label="Fecha">
+				<regex>dd/mm/yyyy</regex>
+            </controlDate>
+
+                <controlDateInterval name="DATE INTERVAL" 
+	        	                   label="Intervalo de Fechas">
+			     		<dateLow name="DATE_LOW" 
+		        	            label="Fecha Low">
+			          <regex>dd/mm/yyyy</regex>
+	                </dateLow>
+	         
+	                <dateHigh name="DATE_HIGH" 
+	        	                 label="Fecha High">
+			          <regex>dd/mm/yyyy</regex>
+		         </dateHigh> 
+			                         
+	        </controlDateInterval> 
+
+        <controlDatePlusDays name="DATE INTERVAL" 
+	        	                   label="Intervalo de Fechas">
+			     		<dateLow name="DATE_LOW2" 
+		        	            label="Fecha Low">
+			          <regex>dd/mm/yyyy</regex>
+	                </dateLow>
+	            <days name="NUMERO" 
+	        	            label="Numero">
+		                <regex>[0-9]{1,100}</regex>
+	            </days>   
+			     </controlDatePlusDays> 
+	    </config>
 
 </app>
 </TP-ACyEDA>
