@@ -4,11 +4,11 @@
 
          <config title="Rotar Video"
 				command="C:\Program Files\ffmpeg"
-				params='ffmpeg -i "[VIDEO]" -vf "rotate=[GRADO]" "[VIDEO_OUT]'>
+				params='ffmpeg -i "[VIDEO]" -vf "rotate=[GRADO]*(PI/180)" "[VIDEO_OUT]"'>
 		     
 		    <controlFileChooser name="VIDEO" 
 		        	            label="Video input">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		    </controlFileChooser>
 	        
@@ -21,7 +21,7 @@
 
    			<controlFileChooser name="VIDEO_OUT" 
 		        	            label="Video output">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		     </controlFileChooser>
 
@@ -31,11 +31,11 @@
 
         <config title="Video Extract"
 				command="C:\Program Files\ffmpeg"
-				params='ffmpeg -ss [TIME_LOW] -i "[VIDEO]" -t [TIME_DURATION] -c copy "[VIDEO_OUT]"'>
+				params='ffmpeg -i "[VIDEO]" -ss [TIME_LOW] -t [TIME_DURATION] -async 1 "[VIDEO_OUT]"'>
 
 				<controlFileChooser name="VIDEO" 
 		        	                label="Archivo de video">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 
@@ -53,7 +53,7 @@
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 		</config>
@@ -66,19 +66,19 @@
 
                 <controlFileChooser name="AUDIO" 
 		        	                label="Archivo de audio">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp3,wav</tipo-arch>
 		        </controlFileChooser>			
 
                 <controlFileChooser name="IMAGE" 
 		        	                label="Archivo de imagen">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>jpg,gif</tipo-arch>
 		        </controlFileChooser>		
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>	
 
@@ -87,23 +87,23 @@
 
         <config title="Join Audios"
 				command="C:\Program Files\ffmpeg"
-				params='ffmpeg -i concat:"[AUDIO1]|[AUDIO2]" -c copy -map 0:0 -map 0:1 -map 0:2 "[AUDIO_OUT]"'>
+				params='ffmpeg -i concat:"[AUDIO1]|[AUDIO2]" -c copy "[AUDIO_OUT]"'>
 
                 <controlFileChooser name="AUDIO1" 
 		        	                label="Archivo de audio 1">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp3,wav</tipo-arch>
 		        </controlFileChooser>			
 
                  <controlFileChooser name="AUDIO2" 
 		        	                label="Archivo de audio 2">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp3,wav</tipo-arch>
 		        </controlFileChooser>		
 
                 <controlFileChooser name="AUDIO_OUT" 
 		        	                label="Archivo de audio output">
-	        	    <def-dir>C:\Users\</def-dir>
+	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
                     <tipo-arch>mp3,wav</tipo-arch>
 		        </controlFileChooser>		
 
@@ -115,19 +115,19 @@
 
             <controlDate name="FECHA1" 
 					     label="Fecha">
-				<regex>dd/mm/yyyy</regex>
+				<regex>dd/MM/yyyy</regex>
             </controlDate>
 
                 <controlDateInterval name="DATE INTERVAL" 
 	        	                   label="Intervalo de Fechas">
 			     		<dateLow name="DATE_LOW" 
 		        	            label="Fecha Low">
-			          <regex>dd/mm/yyyy</regex>
+			          <regex>dd/MM/yyyy</regex>
 	                </dateLow>
 	         
 	                <dateHigh name="DATE_HIGH" 
 	        	                 label="Fecha High">
-			          <regex>dd/mm/yyyy</regex>
+			          <regex>dd/MM/yyyy</regex>
 		         </dateHigh> 
 			                         
 	        </controlDateInterval> 
@@ -136,7 +136,7 @@
 	        	                   label="Intervalo de Fechas">
 			     		<dateLow name="DATE_LOW2" 
 		        	            label="Fecha Low">
-			          <regex>dd/mm/yyyy</regex>
+			          <regex>dd/MM/yyyy</regex>
 	                </dateLow>
 	            <days name="NUMERO" 
 	        	            label="Numero">
