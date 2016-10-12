@@ -3,12 +3,12 @@
 	  
 
          <config title="Rotar Video"
-				command="c:/.../ffmpeg.exe"
-				params="-i [VIDEO] -vf rotate=[GRADO] -o [VIDEO_OUT]...">
+				command="C:\Program Files\ffmpeg\ffmpeg.exe"
+				params='ffmpeg -i [VIDEO] -vf "rotate=[GRADO]" [VIDEO_OUT]'>
 		     
 		    <controlFileChooser name="VIDEO" 
 		        	            label="Video input">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		    </controlFileChooser>
 	        
@@ -21,7 +21,7 @@
 
    			<controlFileChooser name="VIDEO_OUT" 
 		        	            label="Video output">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		     </controlFileChooser>
 
@@ -30,8 +30,8 @@
 
 
         <config title="Video Extract"
-				command="c:/.../ffmpeg.exe"
-				params="-i [VIDEO] -d [TIME_LOW] -e [TIME_HIGH] -o [VIDEO_OUT]...">
+				command="C:\Program Files\ffmpeg\ffmpeg.exe"
+				params="ffmpeg -ss [TIME_LOW] -i [VIDEO] -t [TIME_DURATION]-c copy [VIDEO_OUT]">
 
 				<controlFileChooser name="VIDEO" 
 		        	                label="Archivo de video">
@@ -39,18 +39,17 @@
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 
-                <controlTimeInterval name="TIME INTERVAL" 
-	        	                     label="Intervalo de Tiempo">
-			     		<timeLow name="TIME_LOW" 
-		        	             label="Tiempo LOW">
-           			          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
-                        </timeLow>
-	         
-	                    <timeHigh name="TIME_HIGH" 
-	        	                  label="Tiempo HIGH">
-						      <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
-				        </timeHigh>             
-	            </controlTimeInterval> 
+                <controlTimePlusTime name="TIMEPLUSTIME" 
+       	                       label="Tiempo Mas Tiempo(Intervalo)">
+						       <timeLow name="TIME_LOW" 
+					        	        label="Tiempo Low">
+						          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+					           </timeLow>
+					           <timeToSum name="TIME_DURATION" 
+					       	              label="Tiempo a Sumar">
+							          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+						         </timeToSum>                 
+                </controlTimePlusTime>  
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
@@ -62,24 +61,24 @@
 
         
         <config title="Audio To Video"
-				command="c:/.../ffmpeg.exe"
-				params="-i [IMAGE] -a [AUDIO] -o [VIDEO_OUT]...">
+				command="C:\Program Files\ffmpeg\ffmpeg.exe"
+				params="ffmpeg -loop 1 -i [IMAGE] -i [AUDIO] -shortest -c:v libx264 -c:a copy [VIDEO_OUT]">
 
                 <controlFileChooser name="AUDIO" 
 		        	                label="Archivo de video">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>			
 
                 <controlFileChooser name="IMAGE" 
 		        	                label="Archivo de imagen">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\</def-dir>
                     <tipo-arch>jpg,gif</tipo-arch>
 		        </controlFileChooser>		
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
-	        	    <def-dir>C:\Users\Santiago\git\TPAlgoritmosComplejos</def-dir>
+	        	    <def-dir>C:\Users\</def-dir>
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>	
 
