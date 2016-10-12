@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 
 public class VPrincipal extends JFrame {
@@ -23,6 +24,7 @@ public class VPrincipal extends JFrame {
 	private JComboBox<Aplicacion> cbAplicacion;
 	private JPanel panelPrincipal;
 	public VPrincipal() {
+		setEstilo();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400,400);
 		setLocationRelativeTo(null);
@@ -65,6 +67,17 @@ public class VPrincipal extends JFrame {
 		
 	}
 	
+	private void setEstilo() {
+		try {
+            // Set System L&F
+        UIManager.setLookAndFeel(
+            UIManager.getSystemLookAndFeelClassName());
+	    } 
+	    catch (Exception e) {
+	       // handle exception
+	    }
+	}
+
 	public void addControls(List<Control> controles){
 		panelPrincipal.removeAll();
 		panelPrincipal.updateUI();
