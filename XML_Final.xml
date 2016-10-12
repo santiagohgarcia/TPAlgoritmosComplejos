@@ -18,7 +18,7 @@
 		            <option>180</option>
 		            <option>360</option>
 	        </controlComboBox>
-
+ 
    			<controlFileChooser name="VIDEO_OUT" 
 		        	            label="Video output">
 	        	    <def-dir>C:\Users\Santiago\Videos\TPAlgoritmos</def-dir>
