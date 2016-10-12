@@ -87,7 +87,7 @@
 
         <config title="Join Audios"
 				command="C:\Program Files\ffmpeg"
-				params='ffmpeg -loop 1 -i "[IMAGE]" -i "[AUDIO]" -shortest -c:v libx264 -c:a copy "[VIDEO_OUT]"'>
+				params='ffmpeg -i concat:"[AUDIO1]|[AUDIO2]" -c copy -map 0:0 -map 0:1 -map 0:2 "[AUDIO_OUT]"'>
 
                 <controlFileChooser name="AUDIO1" 
 		        	                label="Archivo de audio 1">
