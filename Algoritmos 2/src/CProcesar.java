@@ -1,6 +1,10 @@
 import java.awt.Window;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
 
 import Nico.Libreria.controller.CDialog;
 import Nico.Libreria.utils.UPaneles;
@@ -10,14 +14,29 @@ public class CProcesar extends CDialog{
 	private VProcesar vista;
 	private Process proceso;
 	
-	public CProcesar(Window padre, VProcesar vista, String comando){
+	public CProcesar(Window padre, VProcesar vista, Configuracion config){
 		this.vista = vista;		
 		iniciarDerivable(padre,vista);
 		accionBotones();
 		vista.setVisible(true);
-		new Thread(() -> ejecutarComando(comando)).start();
+		new Thread(() -> ejecutarComando(getComandoArmado(config))).start();
 	}
 
+	private String getComandoArmado(Configuracion config){
+		List<Control> controles = config.getControles();
+		List<ParametroComando> parametros = new ArrayList<>();
+		for(Control control: controles){
+			parametros.addAll(control.getValores());
+		}
+		
+		String parametrosConfig = config.getParams();
+		for(ParametroComando parametro:parametros){
+			parametrosConfig = StringUtils.replace(parametrosConfig, "["+parametro.getNombreParametro()+"]", parametro.getValorParametro());
+			//parametrosConfig = parametrosConfig.replaceFirst("["+parametro.getNombreParametro()+"]", parametro.getValorParametro());
+		}
+		return parametrosConfig;
+	}
+	
 	private void ejecutarComando(String comando) {
 		try {
 			proceso = Runtime.getRuntime().exec(comando); 
@@ -45,8 +64,12 @@ public class CProcesar extends CDialog{
 	}
 
 	private void cancelarListener() {
-		proceso.destroyForcibly();
-		UPaneles.mostrarInformacion(vista, "Se ha cancelado la operacion");
+		try{
+			proceso.destroyForcibly();
+			UPaneles.mostrarInformacion(vista, "Se ha cancelado la operacion");
+		}catch(Exception e){
+			UPaneles.mostrarError(vista, "Ocurrio un error al intentar cancelar el proceso");
+		}
 	}
 	
 }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ControlTimePlusTime extends Control{
 	
 	private ControlTime timeLow;
@@ -25,15 +28,23 @@ public class ControlTimePlusTime extends Control{
 		this.timeToSum = timeToSum;
 	}
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.addAll(timeLow.getValores());
+		parametros.addAll(timeToSum.getValores());
+		return parametros;
 	}
 	
-	public boolean validar()
+	@Override
+	public void validar() throws Exception
 	{
-		if ( timeLow.validar() && timeToSum.validar() )
-			return true;
-		else
-	        return false;
+		timeLow.validar();
+		timeToSum.validar();
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return timeLow.estaVacio() || timeToSum.estaVacio();
 	}
 	
 }

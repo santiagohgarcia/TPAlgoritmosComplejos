@@ -1,4 +1,5 @@
 import java.awt.FlowLayout;
+import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,7 +15,7 @@ public abstract class Control{
     	panel.add(new JLabel(label));
     }
      
-    public abstract void limpiar();
+    public abstract List<ParametroComando> getValores();
     
 	public String getName() {
 		return name;
@@ -33,9 +34,6 @@ public abstract class Control{
 		return panel;
 	}
 	
-	public boolean validar()
-	{
-		return true;
-	}
-     
+	public abstract void validar() throws Exception;
+	public abstract boolean estaVacio();
 }

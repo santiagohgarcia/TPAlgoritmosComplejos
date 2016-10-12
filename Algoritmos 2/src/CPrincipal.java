@@ -1,5 +1,7 @@
 import java.util.List;
 
+import Nico.Libreria.utils.UPaneles;
+
 
 public class CPrincipal {
 	private VPrincipal vista;
@@ -27,9 +29,20 @@ public class CPrincipal {
 	}
 	
 	private void procesarListener() {
-		String cmd = "ping google.com"; 
-		new CProcesar(vista,new VProcesar(vista),cmd);
-
+		List<Control> controles = vista.getSelectedConfig().getControles();
+		boolean algunVacio = controles.stream().anyMatch(c -> c.estaVacio());
+		if (algunVacio){
+			UPaneles.mostrarError(vista, "Complete todos los campos");
+			return;
+		}
+		try{
+			for(Control control:controles){
+				control.validar();
+			}
+			new CProcesar(vista,new VProcesar(vista),vista.getSelectedConfig());
+		}catch(Exception e){
+			UPaneles.mostrarError(vista, e.getMessage());
+		}
 	}
 
 	private void aplicacionListener(){

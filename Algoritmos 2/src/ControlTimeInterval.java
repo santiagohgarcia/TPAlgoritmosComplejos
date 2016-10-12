@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControlTimeInterval extends Control{
 
@@ -26,16 +28,23 @@ public class ControlTimeInterval extends Control{
 		this.timeHigh = timeHigh;
 	}
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.addAll(timeLow.getValores());
+		parametros.addAll(timeHigh.getValores());
+		return parametros;
 	}
 	
-	
-	public boolean validar()
+	@Override
+	public void validar() throws Exception
 	{
-		if ( timeLow.validar() && timeHigh.validar() )
-			return true;
-		else
-	        return false;
+		timeLow.validar();
+		timeHigh.validar();
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return timeLow.estaVacio() || timeHigh.estaVacio();
 	}
 	
 	

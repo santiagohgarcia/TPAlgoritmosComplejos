@@ -1,8 +1,12 @@
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class ControlTime extends Control{
 	private String regex;
@@ -33,14 +37,25 @@ public class ControlTime extends Control{
 	}
 
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.add(new ParametroComando(getName(),txtTime.getText()));
+		return parametros;
 	}
 	
-	public boolean validar()
+	@Override
+	public void validar() throws Exception
 	{
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(txtTime.getText());
-		return matcher.matches();
+		if(!matcher.matches()){
+			throw new Exception("Formato de tiempo invalido");
+		}
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return StringUtils.isEmpty(txtTime.getText());
 	}
 	
 	

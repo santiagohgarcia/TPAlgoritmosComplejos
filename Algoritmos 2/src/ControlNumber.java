@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import javax.swing.JSpinner;
@@ -29,7 +31,19 @@ public class ControlNumber extends Control {
 	}
 
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.add(new ParametroComando(getName(),String.valueOf(spinner.getValue())));
+		return parametros;
+	}
+
+	@Override
+	public void validar() throws Exception {
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return spinner.getValue()==null;
 	}
 	
 

@@ -1,16 +1,16 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class ControlFileChooser extends Control{
 
@@ -77,8 +77,20 @@ public class ControlFileChooser extends Control{
 		this.tipoArch = tipoArch;
 	}
 	@Override
-	public void limpiar() {
-		
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.add(new ParametroComando(getName(),txtRuta.getText()));
+		return parametros;
+	}
+
+	@Override
+	public void validar() throws Exception {
+		//TODO si hay tiempo validar q la ruta no sea fruta
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return StringUtils.isEmpty(txtRuta.getText());
 	}
 
 }

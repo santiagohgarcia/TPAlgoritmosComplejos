@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,15 +29,23 @@ public class ControlDateInterval extends Control {
 		this.dateHigh = dateHigh;
 	}
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.addAll(dateLow.getValores());
+		parametros.addAll(dateHigh.getValores());
+		return parametros;
 	}
 	
-	public boolean validar()
+	@Override
+	public void validar() throws Exception
 	{
-		if ( dateLow.validar() && dateHigh.validar() )
-			return true;
-		else
-	        return false;
+		dateLow.validar();
+		dateHigh.validar();
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return dateLow.estaVacio() || dateHigh.estaVacio();
 	}
 	
 }

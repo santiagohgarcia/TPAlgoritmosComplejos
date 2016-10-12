@@ -7,7 +7,6 @@ public class ControlComboBox extends Control{
 
 	private List<String> options = new ArrayList<>();
 	private MiCombo<String> combo;
-	private String value;
 
 	@Override
 	public void armar(){
@@ -15,14 +14,6 @@ public class ControlComboBox extends Control{
 		combo = new MiCombo<>();
 		combo.addItems(options);
 		getPanel().add(combo);
-	}
-	
-	public Object getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
 	}
 
 	public List<String> getOptions() {
@@ -34,7 +25,19 @@ public class ControlComboBox extends Control{
 	}
 
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.add(new ParametroComando(getName(),String.valueOf(combo.getSelectedItem())));
+		return parametros;
+	}
+
+	@Override
+	public void validar() {
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return false;
 	}
 	
 	

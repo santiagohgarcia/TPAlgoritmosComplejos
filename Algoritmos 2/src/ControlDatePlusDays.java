@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControlDatePlusDays extends Control{
 	private ControlDate dateLow;
@@ -25,14 +27,22 @@ public class ControlDatePlusDays extends Control{
 		this.dateLow = dateLow;
 	}
 	@Override
-	public void limpiar() {
+	public List<ParametroComando> getValores() {
+		List<ParametroComando> parametros = new ArrayList<>();
+		parametros.addAll(dateLow.getValores());
+		parametros.addAll(days.getValores());
+		return parametros;
 	}
 	
-	public boolean validar()
+	@Override
+	public void validar() throws Exception
 	{
-		if ( dateLow.validar() && days.validar() )
-			return true;
-		else
-	        return false;
+		dateLow.validar();
+		days.validar();
+	}
+
+	@Override
+	public boolean estaVacio() {
+		return dateLow.estaVacio() || days.estaVacio();
 	}
 }
