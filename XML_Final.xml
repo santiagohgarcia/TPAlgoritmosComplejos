@@ -3,8 +3,8 @@
 	  
 
          <config title="Rotar Video"
-				command="C:\Program Files\ffmpeg\ffmpeg.exe"
-				params='ffmpeg -i [VIDEO] -vf "rotate=[GRADO]" [VIDEO_OUT]'>
+				command="C:\Program Files\ffmpeg"
+				params='ffmpeg -i "[VIDEO]" -vf "rotate=[GRADO]" "[VIDEO_OUT]'>
 		     
 		    <controlFileChooser name="VIDEO" 
 		        	            label="Video input">
@@ -30,8 +30,8 @@
 
 
         <config title="Video Extract"
-				command="C:\Program Files\ffmpeg\ffmpeg.exe"
-				params="ffmpeg -ss [TIME_LOW] -i [VIDEO] -t [TIME_DURATION]-c copy [VIDEO_OUT]">
+				command="C:\Program Files\ffmpeg"
+				params='ffmpeg -ss [TIME_LOW] -i "[VIDEO]" -t [TIME_DURATION] -c copy "[VIDEO_OUT]"'>
 
 				<controlFileChooser name="VIDEO" 
 		        	                label="Archivo de video">
@@ -43,11 +43,11 @@
        	                       label="Tiempo Mas Tiempo(Intervalo)">
 						       <timeLow name="TIME_LOW" 
 					        	        label="Tiempo Low">
-						          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+						          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
 					           </timeLow>
 					           <timeToSum name="TIME_DURATION" 
 					       	              label="Tiempo a Sumar">
-							          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{4}</regex>
+							          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
 						         </timeToSum>                 
                 </controlTimePlusTime>  
 
@@ -61,13 +61,13 @@
 
         
         <config title="Audio To Video"
-				command="C:\Program Files\ffmpeg\ffmpeg.exe"
-				params="ffmpeg -loop 1 -i [IMAGE] -i [AUDIO] -shortest -c:v libx264 -c:a copy [VIDEO_OUT]">
+				command="C:\Program Files\ffmpeg"
+				params='ffmpeg -loop 1 -i "[IMAGE]" -i "[AUDIO]" -shortest -c:v libx264 -c:a copy "[VIDEO_OUT]"'>
 
                 <controlFileChooser name="AUDIO" 
-		        	                label="Archivo de video">
+		        	                label="Archivo de audio">
 	        	    <def-dir>C:\Users\</def-dir>
-                    <tipo-arch>mp4,avi,mpeg</tipo-arch>
+                    <tipo-arch>mp3,wav</tipo-arch>
 		        </controlFileChooser>			
 
                 <controlFileChooser name="IMAGE" 
@@ -84,6 +84,30 @@
 
 	    </config>
 
+
+        <config title="Join Audios"
+				command="C:\Program Files\ffmpeg"
+				params='ffmpeg -loop 1 -i "[IMAGE]" -i "[AUDIO]" -shortest -c:v libx264 -c:a copy "[VIDEO_OUT]"'>
+
+                <controlFileChooser name="AUDIO1" 
+		        	                label="Archivo de audio 1">
+	        	    <def-dir>C:\Users\</def-dir>
+                    <tipo-arch>mp3,wav</tipo-arch>
+		        </controlFileChooser>			
+
+                 <controlFileChooser name="AUDIO2" 
+		        	                label="Archivo de audio 2">
+	        	    <def-dir>C:\Users\</def-dir>
+                    <tipo-arch>mp3,wav</tipo-arch>
+		        </controlFileChooser>		
+
+                <controlFileChooser name="AUDIO_OUT" 
+		        	                label="Archivo de audio output">
+	        	    <def-dir>C:\Users\</def-dir>
+                    <tipo-arch>mp3,wav</tipo-arch>
+		        </controlFileChooser>		
+
+	    </config>
 
 
 
