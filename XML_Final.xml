@@ -146,4 +146,10 @@
 	    </config>
 
 </app>
+	<app title="PING">
+		<config title="Ping" command="C:\Windows\System32" params='ping [HOST]'>
+			<controlText name="HOST" label="Host">
+			</controlText>
+		</config>
+	</app>
 </TP-ACyEDA>

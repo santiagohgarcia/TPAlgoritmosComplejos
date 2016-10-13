@@ -67,7 +67,6 @@ public class Main {
     	xstream.useAttributeFor(ControlTimePlusTime.class, "label");
     	xstream.alias("timeLow", ControlTime.class);
     	xstream.alias("timeToSum", ControlTime.class);
-
     	
     	//Clase Control Date
     	xstream.alias("controlDate", ControlDate.class);
@@ -92,7 +91,12 @@ public class Main {
     	xstream.useAttributeFor(ControlDatePlusDays.class, "label");
     	xstream.alias("dateLow", ControlDate.class);
     	xstream.alias("days", ControlNumber.class);
-    	
+
+    	//Clase Control Text
+    	xstream.alias("controlText", ControlText.class);
+    	xstream.useAttributeFor(ControlText.class, "name");
+    	xstream.useAttributeFor(ControlText.class, "label");
+    	    	
         String filePath = "./../XML_Final.xml";
     	String xml = new String(Files.readAllBytes(Paths.get(filePath)));
 
