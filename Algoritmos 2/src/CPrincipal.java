@@ -55,7 +55,9 @@ public class CPrincipal {
 	
 	private void configuracionListener(){
 		Configuracion config = vista.getSelectedConfig();
-		config.armar();
-		vista.addControls(config.getControles());
+		if (config!=null) {
+			config.armar();
+			vista.addControls(config.getControles());
+		} 
 	}
 }

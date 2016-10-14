@@ -151,5 +151,9 @@
 			<controlText name="HOST" label="Host">
 			</controlText>
 		</config>
+		<config title="Ping IPv6" command="C:\Windows\System32" params='ping -6 [HOST]'>
+			<controlText name="HOST" label="Host">
+			</controlText>
+		</config>
 	</app>
 </TP-ACyEDA>
