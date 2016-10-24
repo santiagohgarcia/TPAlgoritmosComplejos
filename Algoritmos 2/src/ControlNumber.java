@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ public class ControlNumber extends Control {
 	public void armar(){
 		super.armar();
 		spinner = new JSpinner();
+		spinner.setPreferredSize(new Dimension(50,20));
 		getPanel().add(spinner);
 	}
 	

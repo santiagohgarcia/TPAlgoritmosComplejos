@@ -12,12 +12,10 @@
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		    </controlFileChooser>
 	        
-	        <controlComboBox name="GRADO" 
-	        	             label="Grado">
-		            <option>90</option>
-		            <option>180</option>
-		            <option>360</option>
-	        </controlComboBox>
+	          <days name="GRADO" 
+	        	    label="Grado">
+		                <regex>[0-9]{1,100}</regex>
+	            </days>   
  
    			<controlFileChooser name="VIDEO_OUT" 
 		        	            label="Video output">
@@ -39,17 +37,22 @@
                     <tipo-arch>mp4,avi,mpeg</tipo-arch>
 		        </controlFileChooser>
 
-                <controlTimePlusTime name="TIMEPLUSTIME" 
-       	                       label="Tiempo Mas Tiempo(Intervalo)">
-						       <timeLow name="TIME_LOW" 
-					        	        label="Tiempo Low">
-						          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
-					           </timeLow>
-					           <timeToSum name="TIME_DURATION" 
-					       	              label="Tiempo a Sumar">
-							          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
-						         </timeToSum>                 
-                </controlTimePlusTime>  
+
+  <controlTimeInterval name="TIME INTERVAL" 
+	        	       label="Intervalo de Tiempo"
+	        	       interval="false">
+		     		<timeLow name="TIME_LOW" 
+	        	            label="Tiempo LOW">
+		              <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
+	                </timeLow>
+	         
+	                <timeHigh name="TIME_DURATION" 
+	        	            label="Tiempo HIGH">
+			          <regex>[0-9]{2}:[0-9]{2}:[0-9]{2}</regex>
+		            </timeHigh> 
+			                         
+</controlTimeInterval> 
+
 
                 <controlFileChooser name="VIDEO_OUT" 
 		        	                label="Archivo de video">
@@ -109,43 +112,10 @@
 
 	    </config>
 
-        <config title="Print"
-				command="C:\Program Files\ffmpeg"
-				params='echo [FECHA1]---[DATE_LOW]---[DATE_HIGH]---[DATE_LOW2]---[NUMERO]'>
-
-            <controlDate name="FECHA1" 
-					     label="Fecha">
-				<regex>dd/MM/yyyy</regex>
-            </controlDate>
-
-                <controlDateInterval name="DATE INTERVAL" 
-	        	                   label="Intervalo de Fechas">
-			     		<dateLow name="DATE_LOW" 
-		        	            label="Fecha Low">
-			          <regex>dd/MM/yyyy</regex>
-	                </dateLow>
-	         
-	                <dateHigh name="DATE_HIGH" 
-	        	                 label="Fecha High">
-			          <regex>dd/MM/yyyy</regex>
-		         </dateHigh> 
-			                         
-	        </controlDateInterval> 
-
-        <controlDatePlusDays name="DATE INTERVAL" 
-	        	                   label="Intervalo de Fechas">
-			     		<dateLow name="DATE_LOW2" 
-		        	            label="Fecha Low">
-			          <regex>dd/MM/yyyy</regex>
-	                </dateLow>
-	            <days name="NUMERO" 
-	        	            label="Numero">
-		                <regex>[0-9]{1,100}</regex>
-	            </days>   
-			     </controlDatePlusDays> 
-	    </config>
+   
 
 </app>
+
 	<app title="PING">
 		<config title="Ping" command="C:\Windows\System32" params='ping [HOST]'>
 			<controlText name="HOST" label="Host">

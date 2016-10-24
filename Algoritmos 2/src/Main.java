@@ -58,6 +58,7 @@ public class Main {
     	xstream.alias("controlTimeInterval", ControlTimeInterval.class);
     	xstream.useAttributeFor(ControlTimeInterval.class, "name");
     	xstream.useAttributeFor(ControlTimeInterval.class, "label");
+    	xstream.useAttributeFor(ControlTimeInterval.class, "interval");
     	xstream.alias("timeLow", ControlTime.class);
     	xstream.alias("timeHigh", ControlTime.class);
     	
