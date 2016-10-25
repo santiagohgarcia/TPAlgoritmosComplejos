@@ -83,6 +83,7 @@ public class Main {
     	xstream.alias("controlDateInterval", ControlDateInterval.class);
     	xstream.useAttributeFor(ControlDateInterval.class, "name");
     	xstream.useAttributeFor(ControlDateInterval.class, "label");
+    	xstream.useAttributeFor(ControlDateInterval.class, "interval");
     	xstream.alias("dateLow", ControlDate.class);
     	xstream.alias("dateHigh", ControlDate.class);
 
